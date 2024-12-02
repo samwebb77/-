@@ -4,13 +4,17 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- main'
+
+variables:
+- name: test2
+  value: not overriden 
 
 pool:
   vmImage: ubuntu-latest
 
 steps:
 - script: |
-              echo $(test)
+              echo ${{ variables.test2 }} 
               
   displayName: "Print Pipeline Variable"
