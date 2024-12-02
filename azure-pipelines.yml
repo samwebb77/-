@@ -11,15 +11,6 @@ pool:
 
 steps:
 - script: |
-              echo "Printing pipeline variables:"
-              for var in $(printenv); do
-                if [[ $var == *'='* ]]; then
-                  name=$(echo $var | cut -d '=' -f 1)
-                  value=$(echo $var | cut -d '=' -f 2)
-                  # Check if it's a pipeline variable
-                  if [[ $name == BUILD_* || $name == SYSTEM_* || $name == AGENT_* ]]; then
-                    echo "$name = $value"
-                  fi
-                fi
-              done
-  displayName: "Print Pipeline Variables"
+              echo $(test)
+              
+  displayName: "Print Pipeline Variable"
