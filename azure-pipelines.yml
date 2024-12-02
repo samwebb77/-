@@ -6,19 +6,15 @@
 trigger:
 - main'
 parameters:
-- name: myStringName
+- name: test
   type: string
   default: a string value
-
-variables:
-- name: test2
-  value: not overriden 
 
 pool:
   vmImage: ubuntu-latest
 
 steps:
 - script: |
-              echo ${{ variables.test2 }} 
+              echo ${{ parameters.test }} 
               
   displayName: "Print Pipeline Variable"
