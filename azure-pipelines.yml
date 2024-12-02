@@ -5,6 +5,10 @@
 
 trigger:
 - main'
+parameters:
+- name: myStringName
+  type: string
+  default: a string value
 
 variables:
 - name: test2
